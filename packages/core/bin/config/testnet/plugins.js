@@ -10,17 +10,18 @@ module.exports = {
             password: process.env.CORE_DB_PASSWORD || "password",
             entityPrefix: "public.",
             synchronize: false,
+            logging: true,
         },
     },
     "@arkecosystem/core-magistrate-transactions": {},
     "@arkecosystem/core-transaction-pool": {
-        enabled: !process.env.CORE_TRANSACTION_POOL_DISABLED,
+        enabled: true,
         maxTransactionsPerSender: process.env.CORE_TRANSACTION_POOL_MAX_PER_SENDER || 300,
         allowedSenders: [],
         dynamicFees: {
             enabled: true,
-            minFeePool: 3000,
-            minFeeBroadcast: 3000,
+            minFeePool: 1000,
+            minFeeBroadcast: 1000,
             addonBytes: {
                 transfer: 100,
                 secondSignature: 250,
@@ -44,8 +45,9 @@ module.exports = {
     },
     "@arkecosystem/core-p2p": {
         server: {
-            port: process.env.CORE_P2P_PORT || 4001,
+            port: process.env.CORE_P2P_PORT || 4002,
         },
+        minimumNetworkReach: 5,
     },
     "@arkecosystem/core-blockchain": {},
     "@arkecosystem/core-api": {

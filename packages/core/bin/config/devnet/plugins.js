@@ -64,4 +64,5 @@ module.exports = {
         },
     },
     "@arkecosystem/core-forger": {},
+    "@arkecosystem/custom-transactions": {},
 };
