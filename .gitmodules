@@ -1,0 +1,3 @@
+[submodule "plugins/ark-mint"]
+	path = plugins/ark-mint
+	url = git@github.com:lostlink/ark-mint.git
